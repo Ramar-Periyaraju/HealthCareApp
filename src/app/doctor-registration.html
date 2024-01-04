@@ -1,0 +1,13 @@
+<form (ngSubmit)="registerDoctor()" #doctorForm="ngForm">
+    <label for="name">Doctor Name:</label>
+    <input type="text" id="name" name="name" [(ngModel)]="doctor.name" required>
+  
+    <label for="specialization">Specialization:</label>
+    <input type="text" id="specialization" name="specialization" [(ngModel)]="doctor.specialization" required>
+  
+    <label for="hospital">Hospital:</label>
+    <input type="text" id="hospital" name="hospital" [(ngModel)]="doctor.hospital" required>
+  
+    <button type="submit" [disabled]="doctorForm.invalid">Register Doctor</button>
+  </form>
+  

@@ -1,0 +1,27 @@
+<form (ngSubmit)="makeAppointment()" #appointmentForm="ngForm">
+    <label for="patientName">Patient Name:</label>
+    <input type="text" id="patientName" name="patientName" [(ngModel)]="appointment.patientName" required>
+  
+    <label for="phone">Phone:</label>
+    <input type="tel" id="phone" name="phone" [(ngModel)]="appointment.phone" required>
+  
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" [(ngModel)]="appointment.email" required>
+  
+    <label for="selectedDoctor">Select Doctor:</label>
+    <select id="selectedDoctor" name="selectedDoctor" [(ngModel)]="appointment.selectedDoctor" required>
+      <option *ngFor="let doctor of doctors" [value]="doctor.id">{{ doctor.name }}</option>
+    </select>
+  
+    <label for="appointmentDate">Appointment Date:</label>
+    <input type="date" id="appointmentDate" name="appointmentDate" [(ngModel)]="appointment.appointmentDate" required>
+  
+    <label for="department">Department:</label>
+    <input type="text" id="department" name="department" [(ngModel)]="appointment.department" required>
+  
+    <label for="description">Description:</label>
+    <textarea id="description" name="description" [(ngModel)]="appointment.description" required></textarea>
+  
+    <button type="submit" [disabled]="appointmentForm.invalid">Make Appointment</button>
+  </form>
+  
